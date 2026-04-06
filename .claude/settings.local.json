@@ -84,7 +84,12 @@
       "Bash(curl:*)",
       "Bash(grep -v \"^$\")",
       "Bash(/usr/bin/codesign:*)",
-      "Bash(xattr -cr /Users/little_7o7/Desktop/saas/frontend/build/ios/Debug-iphonesimulator/)"
+      "Bash(xattr -cr /Users/little_7o7/Desktop/saas/frontend/build/ios/Debug-iphonesimulator/)",
+      "Bash(git branch:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

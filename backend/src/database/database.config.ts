@@ -10,6 +10,7 @@ export const getDatabaseConfig = (config: ConfigService): TypeOrmModuleOptions =
   database: config.get('DB_NAME', 'saas_db'),
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   migrations: [__dirname + '/migrations/*{.ts,.js}'],
-  synchronize: config.get('NODE_ENV') === 'development',
+  synchronize: true,
   logging: config.get('NODE_ENV') === 'development',
+  ssl: config.get('DB_SSL') === 'true' ? { rejectUnauthorized: false } : false,
 });
