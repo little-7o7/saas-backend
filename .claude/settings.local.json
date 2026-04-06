@@ -96,7 +96,8 @@
       "Bash(xattr -cr /Users/little_7o7/Desktop/saas/frontend/build/ios/Debug-iphonesimulator/ cd /Users/little_7o7/Desktop/saas/frontend/ios)",
       "Bash(pod install:*)",
       "Bash(xattr -cr /Users/little_7o7/Desktop/saas/frontend/)",
-      "Bash(pkill -f \"flutter_tools\")"
+      "Bash(pkill -f \"flutter_tools\")",
+      "Bash(pkill -f flutter_tools)"
     ]
   }
 }

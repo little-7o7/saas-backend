@@ -9,6 +9,7 @@ import 'features/customers/screens/add_customer_screen.dart';
 import 'features/customers/screens/customer_detail_screen.dart';
 import 'features/warehouse/warehouse_screen.dart';
 import 'features/debts/debts_screen.dart';
+import 'features/admin/admin_screen.dart';
 import 'shared/screens/home_screen.dart';
 import 'shared/providers/auth_provider.dart';
 
@@ -16,18 +17,24 @@ final routerProvider = Provider<GoRouter>((ref) {
   final auth = ref.watch(authProvider);
 
   return GoRouter(
-    initialLocation: auth.isLoggedIn ? '/home' : '/login',
+    initialLocation: auth.isLoggedIn
+        ? (auth.role == 'super_admin' ? '/admin' : '/home')
+        : '/login',
     redirect: (context, state) {
       final loggedIn = auth.isLoggedIn;
+      final isAdmin = auth.role == 'super_admin';
       final isAuth = state.matchedLocation.startsWith('/login') ||
           state.matchedLocation.startsWith('/register');
+
       if (!loggedIn && !isAuth) return '/login';
-      if (loggedIn && isAuth) return '/home';
+      if (loggedIn && isAuth) return isAdmin ? '/admin' : '/home';
+      if (loggedIn && isAdmin && state.matchedLocation.startsWith('/home')) return '/admin';
       return null;
     },
     routes: [
       GoRoute(path: '/login', builder: (_, __) => const LoginScreen()),
       GoRoute(path: '/register', builder: (_, __) => const RegisterScreen()),
+      GoRoute(path: '/admin', builder: (_, __) => const AdminScreen()),
       ShellRoute(
         builder: (_, __, child) => child,
         routes: [
