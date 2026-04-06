@@ -88,7 +88,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   onPressed: () => context.push('/home/products/new'),
                   child: const Icon(Icons.add),
                 )
-              : null,
+              : _index == 3
+                  ? FloatingActionButton(
+                      onPressed: () => context.push('/home/customers/new'),
+                      child: const Icon(Icons.person_add),
+                    )
+                  : null,
     );
   }
 }

@@ -4,6 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'features/auth/screens/login_screen.dart';
 import 'features/auth/screens/register_screen.dart';
 import 'features/sales/screens/new_sale_screen.dart';
+import 'features/products/screens/add_product_screen.dart';
+import 'features/customers/screens/add_customer_screen.dart';
+import 'features/customers/screens/customer_detail_screen.dart';
+import 'features/warehouse/warehouse_screen.dart';
+import 'features/debts/debts_screen.dart';
 import 'shared/screens/home_screen.dart';
 import 'shared/providers/auth_provider.dart';
 
@@ -16,7 +21,6 @@ final routerProvider = Provider<GoRouter>((ref) {
       final loggedIn = auth.isLoggedIn;
       final isAuth = state.matchedLocation.startsWith('/login') ||
           state.matchedLocation.startsWith('/register');
-
       if (!loggedIn && !isAuth) return '/login';
       if (loggedIn && isAuth) return '/home';
       return null;
@@ -34,6 +38,28 @@ final routerProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: 'sales/new',
                 builder: (_, __) => const NewSaleScreen(),
+              ),
+              GoRoute(
+                path: 'products/new',
+                builder: (_, __) => const AddProductScreen(),
+              ),
+              GoRoute(
+                path: 'customers/new',
+                builder: (_, __) => const AddCustomerScreen(),
+              ),
+              GoRoute(
+                path: 'customers/:id',
+                builder: (_, state) => CustomerDetailScreen(
+                  customerId: state.pathParameters['id']!,
+                ),
+              ),
+              GoRoute(
+                path: 'warehouse',
+                builder: (_, __) => const WarehouseScreen(),
+              ),
+              GoRoute(
+                path: 'debts',
+                builder: (_, __) => const DebtsScreen(),
               ),
             ],
           ),

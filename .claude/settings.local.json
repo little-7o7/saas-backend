@@ -90,7 +90,13 @@
       "Bash(git push:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(node -e \"const bcrypt = require\\('bcryptjs'\\); Promise.all\\([bcrypt.hash\\('Admin123!', 12\\), bcrypt.hash\\('Shop123!', 12\\)]\\).then\\(\\([a,s]\\) => console.log\\('ADMIN:'+a+'\\\\nSHOP:'+s\\)\\)\")",
+      "Bash(PGPASSWORD=npg_a4YlyfOHig9w psql:*)",
+      "Bash(xattr -cr /Users/little_7o7/Desktop/saas/frontend/build/ios/Debug-iphonesimulator/ cd /Users/little_7o7/Desktop/saas/frontend/ios)",
+      "Bash(pod install:*)",
+      "Bash(xattr -cr /Users/little_7o7/Desktop/saas/frontend/)",
+      "Bash(pkill -f \"flutter_tools\")"
     ]
   }
 }

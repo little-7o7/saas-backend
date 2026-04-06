@@ -1,19 +1,19 @@
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
-const _storage = FlutterSecureStorage();
-
 Future<void> saveToken(String token) async {
-  await _storage.write(key: 'jwt_token', value: token);
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setString('jwt_token', token);
 }
 
 Future<String?> getToken() async {
-  return _storage.read(key: 'jwt_token');
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getString('jwt_token');
 }
 
 Future<void> clearToken() async {
-  await _storage.delete(key: 'jwt_token');
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.remove('jwt_token');
 }
 
 Future<void> saveUser(Map<String, dynamic> user) async {
@@ -41,7 +41,6 @@ Future<Map<String, dynamic>?> getTenant() async {
 }
 
 Future<void> clearAll() async {
-  await _storage.deleteAll();
   final prefs = await SharedPreferences.getInstance();
   await prefs.clear();
 }
