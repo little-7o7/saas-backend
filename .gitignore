@@ -1,0 +1,16 @@
+# Env files
+.env
+.env.local
+.env.production
+
+# Backend
+backend/dist/
+backend/node_modules/
+
+# Frontend
+frontend/build/
+frontend/node_modules/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/pubspec.lock
