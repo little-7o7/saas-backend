@@ -1,0 +1,6 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+CODE_SIGNING_REQUIRED = NO
+CODE_SIGNING_ALLOWED = NO
+SYMROOT=$(HOME)/Library/Developer/BuildArtifacts/saas_frontend
+OBJROOT=$(HOME)/Library/Developer/BuildArtifacts/saas_frontend/Intermediates.noindex

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter analyze:*)",
+      "Bash(xcrun simctl:*)",
+      "Bash(flutter run:*)",
+      "Bash(flutter devices:*)",
+      "Bash(flutter build:*)",
+      "Bash(xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -sdk iphonesimulator -destination 'id=D223D93C-AE81-488A-86F1-2D1C05E870B6' CODE_SIGNING_ALLOWED=NO)",
+      "Bash(xcodebuild -workspace /Users/little_7o7/Desktop/saas/frontend/ios/Runner.xcworkspace -scheme Runner -configuration Debug -sdk iphonesimulator -destination 'id=D223D93C-AE81-488A-86F1-2D1C05E870B6' CODE_SIGNING_ALLOWED=NO)",
+      "Bash(grep -v \"^--$\")",
+      "Bash(xattr:*)",
+      "Bash(find /Users/little_7o7/Desktop/saas/frontend/build/native_assets/ios/ -exec xattr -l {} \\\\;)",
+      "Bash(find /Users/little_7o7/Desktop/saas/frontend/build/native_assets/ios/ -exec xattr -c {} \\\\;)",
+      "Bash(flutter clean:*)",
+      "Bash(find /Users/little_7o7/Desktop/saas/frontend/build/native_assets -exec xattr -l {} \\\\;)",
+      "Bash(find:*)",
+      "Bash(ln -s build.nosync /Users/little_7o7/Desktop/saas/frontend/build)",
+      "Bash(rm -rf /tmp/saas_native_assets)",
+      "Bash(cp -r /Users/little_7o7/Desktop/saas/frontend/build.nosync/native_assets /tmp/saas_native_assets)",
+      "Bash(ln -s /tmp/saas_native_assets /Users/little_7o7/Desktop/saas/frontend/build.nosync/native_assets)",
+      "Bash(grep -v \"^$\")",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(xcodebuild -workspace /Users/little_7o7/Desktop/saas/frontend/ios/Runner.xcworkspace -scheme Runner -configuration Debug -sdk iphonesimulator -destination 'id=36356C84-703C-447D-B6FC-86C567988127')",
+      "Bash(grep -v \"^    export\\\\|^$\\\\|builtin-\\\\|ScanDep\\\\|clang \")",
+      "Bash(grep -v \"^$\\\\|builtin-\\\\|export CODE\\\\|clang \\\\|ScanDep\")",
+      "Bash(grep -E \"\\\\[.{3,}\\\\] \\(Uncategorized|Error|Failed|failed|codesign|install_code\\)\")",
+      "Bash(mv /Users/little_7o7/Desktop/saas/frontend/build.nosync/* ~/Library/Developer/BuildArtifacts/saas_frontend_build/)",
+      "Bash(ln -s ~/Library/Developer/BuildArtifacts/saas_frontend_build /Users/little_7o7/Desktop/saas/frontend/build)"
+    ]
+  }
+}
